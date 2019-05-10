@@ -5,7 +5,7 @@
   require_once "CalculadoraDeDescontos.php";
   require_once "Item.php";
 
-  $reforma = new Orcamento(1500);
+  $reforma = new Orcamento(0);
 
   $calculadora = new CalculadoraDeImpostos();
 
@@ -19,9 +19,6 @@
   $calculadoraDescontos = new CalculadoraDeDescontos();
 
   $reforma->addItem(new Item("Tijolo", 250));
-  $reforma->addItem(new Item("Cimento 1Kg", 250));
-  $reforma->addItem(new Item("Cimento 1Kg", 250));
-  $reforma->addItem(new Item("Cimento 1Kg", 250));
   $reforma->addItem(new Item("Cimento 1Kg", 250));
 
   echo $calculadoraDescontos->calcula($reforma);

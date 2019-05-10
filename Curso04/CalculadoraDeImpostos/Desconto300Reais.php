@@ -5,7 +5,7 @@
 
     public function calcula(Orcamento $orcamento){
       if($orcamento->getValor() >= 300){
-        return $orcamento->getValor * 0.01;
+        return $orcamento->getValor() * 0.01;
       }else{
         return $this->proximoDesconto->calcula($orcamento);
       }
