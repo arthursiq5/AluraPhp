@@ -5,7 +5,7 @@
   require_once "CalculadoraDeDescontos.php";
   require_once "Item.php";
 
-  $reforma = new Orcamento(0);
+  $reforma = new Orcamento(400);
 
   $calculadora = new CalculadoraDeImpostos();
 
