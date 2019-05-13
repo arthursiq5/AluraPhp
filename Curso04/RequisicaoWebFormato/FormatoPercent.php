@@ -3,7 +3,9 @@
 
   class FormatoPercent implements Formato{
     private $proximoFormato;
-
+    public function __construct(Formato $proximo){
+      $this->proximoFormato = $proximo;
+    }
     public function setProximo(Formato $proximo){
       $this->proximoFormato = $proximo;
     }

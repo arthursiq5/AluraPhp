@@ -3,9 +3,12 @@
   class FormatoXML implements Formato{
     protected $proximoFormato;
 
-    public function setProximo(Formato $proximo){
+    public function __construct(Formato $proximo){
       $this->proximoFormato = $proximo;
     }
+    /*public function setProximo(Formato $proximo){
+      $this->proximoFormato = $proximo;
+    }*/
 
     public function formataTexto($nome, $saldo, $formato){
       if($formato == 1){

@@ -2,6 +2,7 @@
   require_once 'Formato.php';
 
   class SemFormato implements Formato{
+    public function __construct($proximo = null){}
     public function setProximo(Formato $proximo){
       throw new Exception("A classe nao pode chamar outros formatos");
     }
