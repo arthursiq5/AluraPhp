@@ -1,14 +1,14 @@
 <?php
-  class TemplateDadosBanco{
+  abstract class TemplateDadosBanco{
 
-    public function imprimeCabecalho(){
-      return $this->cabecalho() . '<br/>' . $this->dados() . '<br/>' . $this->rodape();
+    public function imprimeCabecalho(BancoDados $banco, SplDoublyLinkedList $contas=null){
+      return $this->cabecalho($banco) . '<br/>' . $this->dados($contas) . '<br/>' . $this->rodape($banco);
     }
   }
 
-  public abstract function cabecalho();
+  protected abstract function cabecalho(BancoDados $banco);
 
-  public abstract function dados();
+  protected abstract function dados(BancoDados $banco);
 
-  public abstract function rodape();
+  protected abstract function rodape(SplDoublyLinkedList $contas=null);
  ?>
