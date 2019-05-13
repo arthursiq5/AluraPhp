@@ -4,6 +4,7 @@
   require_once 'Imposto.php';
   require_once 'ICPP.php';
   require_once 'IKCV.php';
+  require_once 'IHIT.php';
 
   class CalculadoraDeImpostos{
     public function calcula(Orcamento $orcamento, Imposto $imposto){

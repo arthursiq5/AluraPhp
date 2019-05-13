@@ -16,7 +16,8 @@
   echo 'ICMS ' . $calculadora->calcula($reforma, new ICMS()) . "<br/>";
   echo 'ISS ' . $calculadora->calcula($reforma, new ISS()) . '<br/>';
   echo 'ICPP ' . $calculadora->calcula($reforma, new ICPP) . '<br/>';
-  echo 'IKCV ' . $calculadora->calcula($reforma, new IKCV);
+  echo 'IKCV ' . $calculadora->calcula($reforma, new IKCV) . '<br/>';
+  echo 'IHIT ' . $calculadora->calcula($reforma, new IHIT);
 
   echo "<br/>". "<br/>". "<br/>". "<br/>". "<br/>";
 
