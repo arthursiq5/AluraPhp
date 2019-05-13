@@ -1,7 +1,7 @@
 <?php
   class Conta{
-    private $nome;
-    private $saldo;
+    protected $nome;
+    protected $saldo;
 
     public function __construct($nome, $saldo){
       $this->nome = $nome;
