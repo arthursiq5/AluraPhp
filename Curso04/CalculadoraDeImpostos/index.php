@@ -4,13 +4,19 @@
   require_once 'Imposto.php';
   require_once "CalculadoraDeDescontos.php";
   require_once "Item.php";
+  require_once 'ICPP.php';
 
-  $reforma = new Orcamento(400);
+  $reforma = new Orcamento(501);
 
   $calculadora = new CalculadoraDeImpostos();
 
-  echo $calculadora->calcula($reforma, new ICMS()) . "<br/>";
-  echo $calculadora->calcula($reforma, new ISS());
+  $reforma->addItem(new Item("Tijolo", 250));
+  $reforma->addItem(new Item("Cimento 1Kg", 250));
+
+  echo 'ICMS ' . $calculadora->calcula($reforma, new ICMS()) . "<br/>";
+  echo 'ISS ' . $calculadora->calcula($reforma, new ISS()) . '<br/>';
+  echo 'ICPP ' . $calculadora->calcula($reforma, new ICPP) . '<br/>';
+  echo 'IKCV ' . $calculadora->calcula($reforma, new IKCV);
 
   echo "<br/>". "<br/>". "<br/>". "<br/>". "<br/>";
 
@@ -18,8 +24,7 @@
 
   $calculadoraDescontos = new CalculadoraDeDescontos();
 
-  $reforma->addItem(new Item("Tijolo", 250));
-  $reforma->addItem(new Item("Cimento 1Kg", 250));
+
 
   echo $calculadoraDescontos->calcula($reforma);
  ?>

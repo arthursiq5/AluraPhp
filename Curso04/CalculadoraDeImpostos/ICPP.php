@@ -1,12 +1,10 @@
 <?php
   require_once 'Imposto.php';
   require_once 'TemplateDeImpostoCondicional.php';
-
-
-  class ICMS extends TemplateDeImpostoCondicional{
-
+  
+  class ICPP extends TemplateDeImpostoCondicional{
     public function deveUsarOMaximo(Orcamento $orcamento){
-      return $orcamento->getValor() > 500;
+      return $orcamento->getValor() >= 500;
     }
 
     public function taxacaoMinima(Orcamento $orcamento){
@@ -14,7 +12,7 @@
     }
 
     public function taxacaoMaxima(Orcamento $orcamento){
-      return $orcamento->getValor() * 0.15;
+      return $orcamento->getValor() * 0.07;
     }
   }
-?>
+ ?>
