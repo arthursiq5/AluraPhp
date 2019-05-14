@@ -12,14 +12,7 @@
 
   $reforma->addItem(new Item("Tijolo", 250));
   $reforma->addItem(new Item("Cimento 1Kg", 250));
-  echo 'ICMS+ISS ' . $calculadora->calcula($reforma, new ICMS(new ISS)) . "<br/>";
+  echo 'ICMS+ISS+ImpostoMuitoAlto ' . $calculadora->calcula($reforma, new ImpostoMuitoAlto(new ISS)) . "<br/>";
 
-  echo 'ICMS ' . $calculadora->calcula($reforma, new ICMS()) . "<br/>";
-  echo 'ISS ' . $calculadora->calcula($reforma, new ISS()) . '<br/>';
-  echo 'ICPP ' . $calculadora->calcula($reforma, new ICPP) . '<br/>';
-  echo 'IKCV ' . $calculadora->calcula($reforma, new IKCV) . '<br/>';
-  echo 'IHIT ' . $calculadora->calcula($reforma, new IHIT);
-
-  echo "<br/>". "<br/>". "<br/>". "<br/>". "<br/>";
 
  ?>

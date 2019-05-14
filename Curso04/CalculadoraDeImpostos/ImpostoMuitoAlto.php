@@ -2,10 +2,8 @@
   require_once "Imposto.php";
 
   class ImpostoMuitoAlto extends Imposto{
-    protected abstract function deveUsarOMaximo(Orcamento $orcamento);
-
-    protected abstract function taxacaoMinima(Orcamento $orcamento);
-
-    protected abstract function taxacaoMaxima(Orcamento $orcamento);
+    public function calcula(Orcamento $orcamento){
+      return ($orcamento->getValor() * 0.2) + $this->calculaOutro($orcamento);
+    }
   }
  ?>
