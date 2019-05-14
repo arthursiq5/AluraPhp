@@ -10,13 +10,7 @@ require_once 'Imposto.php';
       }
     }
 
-    protected function calculaOutro(Orcamento $orcamento){
-      if(is_null($this->outroImposto)){
-        return 0;
-      }else{
-        return $this->outroImposto->calcula($orcamento);
-      }
-    }
+    
 
     // funcoes a serem implementadas pelas classes filhas
     protected abstract function deveUsarOMaximo(Orcamento $orcamento);
