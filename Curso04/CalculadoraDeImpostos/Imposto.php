@@ -1,9 +1,14 @@
 <?php
   require_once "Orcamento.php";
 
-  interface Imposto
+  abstract class Imposto
   {
-    public function calcula(Orcamento $orcamento);
+    protected $outroImposto;
+    function __construct(Imposto $imposto=null){
+      $this->outroImposto = $imposto;
+    }
+
+    public abstract function calcula(Orcamento $orcamento);
   }
 
  ?>

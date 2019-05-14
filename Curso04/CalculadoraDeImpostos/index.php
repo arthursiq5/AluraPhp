@@ -12,6 +12,7 @@
 
   $reforma->addItem(new Item("Tijolo", 250));
   $reforma->addItem(new Item("Cimento 1Kg", 250));
+  echo 'ICMS+ISS ' . $calculadora->calcula($reforma, new ICMS(new ISS)) . "<br/>";
 
   echo 'ICMS ' . $calculadora->calcula($reforma, new ICMS()) . "<br/>";
   echo 'ISS ' . $calculadora->calcula($reforma, new ISS()) . '<br/>';
@@ -21,11 +22,4 @@
 
   echo "<br/>". "<br/>". "<br/>". "<br/>". "<br/>";
 
-  echo "Testes de Descontos<br/>";
-
-  $calculadoraDescontos = new CalculadoraDeDescontos();
-
-
-
-  echo $calculadoraDescontos->calcula($reforma);
  ?>
