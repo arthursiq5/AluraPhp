@@ -4,12 +4,20 @@
   require_once 'TemplateDadosBanco.php';
 
   class RelatorioSimples extends TemplateDadosBanco{
-    protected abstract function cabecalho(BancoDados $banco){
-      
+    protected function cabecalho(BancoDados $banco){
+      return $banco->nomeDoBanco . '&emsp;' . $banco->telefone . '<br/>' . '------------------------------<br/>';
     }
 
-    protected abstract function dados();
+    protected function dados(BancoDados $banco){
+      $ans = '';
+      foreach ($banco->contas as $conta) {
+        $ans = $ans . $conta->nome . '&emsp;' . $conta->saldo . '<br/>';
+      }
+      return $ans;
+    }
 
-    protected abstract function rodape();
+    protected function rodape(BancoDados $banco){
+      return '------------------------------';
+    }
   }
  ?>
