@@ -2,14 +2,19 @@
   require_once 'Positivo.php';
   require_once 'Negativo.php';
   class Conta{
-    protected $titular;
-    protected $saldo;
-    protected $estado;
+    private $titular;
+    private $saldo;
+    private $estado;
 
     public function __construct($titular, $saldo=0){
       $this->titular = $titular;
       $this->saldo = $saldo;
       $this->estado = ($saldo >= 0) ? new Positivo() : new Negativo();
+    }
+
+    public function setSaldo($saldo){
+      $this->saldo = $saldo;
+      return $this;
     }
 
     public function getSaldo(){
@@ -22,6 +27,11 @@
 
     public function depositar($valor){
       $this->estado->deposito($valor, $this);
+    }
+
+    public function setEstado(EstadoConta $estado){
+      $this->estado = $estado;
+      return $this;
     }
   }
  ?>
