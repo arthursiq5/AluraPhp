@@ -42,5 +42,11 @@
         $this->dataEmissao = $data;
       }
     }
+
+    public function gerarNota(){
+      if(is_null($this->dataEmissao)) $this->naData();
+      return new NotaFiscal($this->empresa, $this->cnpj, $this->itens, $this->valorBruto, $this->valorImpostos, $this->observacoes, ($this->dataEmissao));
+      // $nomeEmpresa, $cnpj, $itens, $valorBruto, $valorImpostos, $observacoes, $dataEmissao
+    }
   }
  ?>
