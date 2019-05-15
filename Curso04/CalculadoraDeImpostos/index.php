@@ -14,5 +14,12 @@
   $reforma->addItem(new Item("Cimento 1Kg", 250));
   echo 'ICMS+ISS+ImpostoMuitoAlto ' . $calculadora->calcula($reforma, new ImpostoMuitoAlto(new ISS)) . "<br/>";
 
+  echo $reforma->getValor() . '<br/>';
+
+  $reforma->aprova();
+
+  $reforma->aplicaDesconto();
+
+  echo $reforma->getValor();
 
  ?>

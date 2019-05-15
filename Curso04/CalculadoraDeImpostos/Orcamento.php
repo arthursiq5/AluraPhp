@@ -1,4 +1,5 @@
 <?php
+  require_once 'EstadoDoOrcamento.php';
   require_once 'Aprovado.php';
   require_once 'EmAprovacao.php';
   require_once 'Reprovado.php';
@@ -31,16 +32,34 @@
       return $this->estado;
     }
 
-    public function setEstado($novoEstado){
-      $this->estado = $novoEstado;
-    }
-
     public function setValor($novoValor){
       $this->valor = $novoValor;
+      return $this;
+    }
+
+    public function setEstado(EstadoDoOrcamento $novoEstado){
+      $this->estado = $novoEstado;
+      return $this;
     }
 
     public function aplicaDesconto(){
-      $this->estado->aplica($this);
+      $this->estado->aplicaDesconto($this);
+      return $this;
+    }
+
+    public function aprova(){
+      $this->estado->aprova($this);
+      return $this;
+    }
+
+    public function reprova(){
+      $this->estado->reprova($this);
+      return $this;
+    }
+
+    public function finaliza(){
+      $this->estado->finaliza($this);
+      return $this;
     }
   }
  ?>
