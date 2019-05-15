@@ -16,10 +16,15 @@
 
   echo $reforma->getValor() . '<br/>';
 
-  $reforma->aprova();
+  $reforma->aprova(); // desconto aprovado
+
+  // $reforma->reprova() // retorna erro
 
   $reforma->aplicaDesconto();
 
+  $reforma->finaliza(); // finaliza o orcamento
+
+  // $reforma->aprova(); // retorna erro
   echo $reforma->getValor();
 
  ?>

@@ -6,8 +6,15 @@
   require_once 'Finalizado.php';
 
   class EmAprovacao implements EstadoDoOrcamento{
+    private $descontoAplicado = false;
+
     public function aplicaDesconto(Orcamento $orcamento){
-      $orcamento->setValor($orcamento->getValor() - $orcamento->getValor() * 0.02);
+      if(!$this->descontoAplicado){
+        $orcamento->setValor($orcamento->getValor() - $orcamento->getValor() * 0.02);
+        $this->descontoAplicado = true;
+      }else{
+        throw new Exception('Cada desconto so pode ser aplicado uma unica vez');
+      }
     }
 
     public function aprova(Orcamento $orcamento){
