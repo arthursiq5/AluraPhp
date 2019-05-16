@@ -10,7 +10,7 @@
   $itens[] = new Item('Cimento', 250);
 
   $imposto = 500 * 0.2;
-  $gerador = new NotaFiscalBuild();
+  $gerador = new NotaFiscalBuilder();
   $gerador->comEmpresa('Alura');
   $gerador->comCnpj('1234');
   $gerador->addItem(new Item('Tijolo', 250));
