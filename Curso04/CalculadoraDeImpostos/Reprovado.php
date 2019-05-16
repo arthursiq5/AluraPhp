@@ -1,5 +1,4 @@
 <?php
-  require_once 'EstadoDoOrcamento.php';
   class Reprovado implements EstadoDoOrcamento{
 
     public function aplicaDesconto(Orcamento $orcamento){

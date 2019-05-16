@@ -1,5 +1,4 @@
 <?php
-  require_once 'Desconto.php';
   class Desconto300Reais implements Desconto{
     private $proximoDesconto;
 

@@ -1,5 +1,4 @@
 <?php
-  require_once 'Item.php';
   class ItemBuilder{
     private $nome;
     private $valor;

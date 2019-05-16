@@ -1,10 +1,10 @@
 <?php
   date_default_timezone_set("Brazil/East"); // definindo fuso-horario
-
-  require_once 'NotaFiscal.php';
-  require_once 'Item.php';
-  require_once 'NotaFiscalBuilder.php';
-
+  function carregaClasse($nomeClasse){
+    require $nomeClasse . ".php";
+  }
+  spl_autoload_register("CarregaClasse");
+  
   $itens = array();
   $itens[] = new Item('Tijolo', 250);
   $itens[] = new Item('Cimento', 250);
@@ -18,7 +18,7 @@
   $gerador->comObservacoes('Tijolos amarelos');
   $gerador->naData();
 
-  $gerador->addAcao(new Impressora())->addAcao(new NotaFiscalDao())->addAcao(new EnviadorDeSms());
+  $gerador->addAcao(new Impressora())->addAcao(new NotaFiscalDao())->addAcao(new EnviadorDeSms())->addAcao(new MultiplicadorDeNota(2));
 
   $nota = $gerador->build();
 

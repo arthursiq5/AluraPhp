@@ -1,8 +1,4 @@
 <?php
-  require_once 'Impressora.php';
-  require_once 'NotaFiscalDao.php';
-  require_once 'AcoesAoGerarNota.php';
-  require_once 'EnviadorDeSms.php';
 
   class NotaFiscalBuilder{
     // declaracao de variaveis do objeto

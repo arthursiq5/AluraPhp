@@ -1,6 +1,4 @@
 <?php
-  require_once 'Positivo.php';
-  require_once 'Negativo.php';
   class Conta{
     private $titular;
     private $saldo;

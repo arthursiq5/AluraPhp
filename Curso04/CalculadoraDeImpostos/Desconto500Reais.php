@@ -1,6 +1,4 @@
 <?php
-  require_once "Desconto.php";
-
   class Desconto500Reais implements Desconto{
     private $proximoDesconto; // recebera o objeto do proximo desconto
 

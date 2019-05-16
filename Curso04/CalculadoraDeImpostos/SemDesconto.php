@@ -1,6 +1,4 @@
 <?php
-  require_once "Desconto.php";
-
   class SemDesconto implements Desconto{
     public function calcula(Orcamento $orcamento){
       return 0;

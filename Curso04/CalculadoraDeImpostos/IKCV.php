@@ -1,6 +1,4 @@
 <?php
-  require_once 'TemplateDeImpostoCondicional.php';
-
   class IKCV extends TemplateDeImpostoCondicional{
     public function deveUsarOMaximo(Orcamento $orcamento){
       $i = false;

@@ -1,7 +1,4 @@
 <?php
-  require_once 'EstadoConta.php';
-  require_once 'Conta.php';
-
   class Positivo implements EstadoConta{
     public function saque($valor, Conta $conta){
       $conta->setSaldo($conta->getSaldo() - $valor);

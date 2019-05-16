@@ -1,11 +1,8 @@
 <?php
-  require_once "Orcamento.php";
-  require_once "CalculadoraDeImpostos.php";
-  require_once 'Imposto.php';
-  require_once "CalculadoraDeDescontos.php";
-  require_once "Item.php";
-  require_once 'ICPP.php';
-
+  function carregaClasse($nome){
+    require $nome . '.php';
+  }
+  spl_autoload_register('carregaClasse');
   $reforma = new Orcamento(501);
 
   $calculadora = new CalculadoraDeImpostos();

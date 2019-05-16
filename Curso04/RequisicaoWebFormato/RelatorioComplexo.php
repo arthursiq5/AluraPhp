@@ -1,6 +1,4 @@
 <?php
-  require_once 'TemplateDadosBanco.php';
-
   class RelatorioComplexo extends TemplateDadosBanco{
     protected function cabecalho(BancoDados $banco){
       return $banco->nomeDoBanco . '&emsp;' . $banco->endereco . '&emsp;' . $banco->telefone . '<br/>' . '------------------------------<br/>';

@@ -1,6 +1,4 @@
 <?php
-  require_once 'Conta.php';
-
   abstract class Filtro{
     private $filtro;
     public abstract function filtra($contas);

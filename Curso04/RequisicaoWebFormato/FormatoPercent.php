@@ -1,6 +1,4 @@
 <?php
-  require_once 'Formato.php';
-
   class FormatoPercent implements Formato{
     private $proximoFormato;
     public function __construct(Formato $proximo){

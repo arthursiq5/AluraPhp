@@ -1,7 +1,4 @@
 <?php
-  require_once 'Imposto.php';
-  require_once 'TemplateDeImpostoCondicional.php';
-  
   class ICPP extends TemplateDeImpostoCondicional{
     public function deveUsarOMaximo(Orcamento $orcamento){
       return $orcamento->getValor() >= 500;

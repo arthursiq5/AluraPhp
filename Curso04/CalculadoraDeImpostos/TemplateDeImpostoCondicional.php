@@ -1,5 +1,4 @@
 <?php
-require_once 'Imposto.php';
   abstract class TemplateDeImpostoCondicional extends Imposto{
     // modelo basico de funcao de imposto
     public function calcula(Orcamento $orcamento){
@@ -10,7 +9,7 @@ require_once 'Imposto.php';
       }
     }
 
-    
+
 
     // funcoes a serem implementadas pelas classes filhas
     protected abstract function deveUsarOMaximo(Orcamento $orcamento);

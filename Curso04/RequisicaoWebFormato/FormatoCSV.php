@@ -1,6 +1,4 @@
 <?php
-  require_once "Formato.php";
-
   class FormatoCSV implements Formato{
     private $proximoFormato;
 

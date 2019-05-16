@@ -1,11 +1,4 @@
 <?php
-  require_once "Desconto.php";
-  require_once "Desconto500Reais.php";
-  require_once "DescontoVendaCasada.php";
-  require_once "Desconto5Itens.php";
-  require_once "SemDesconto.php";
-  require_once "Desconto300Reais.php";
-
 
   class CalculadoraDeDescontos{
     public function calcula(Orcamento $orcamento){

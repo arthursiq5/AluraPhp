@@ -1,6 +1,4 @@
 <?php
-  require_once 'Investimento.php';
-
   class Conservador implements Investimento{
     private $valorInvestido;
 

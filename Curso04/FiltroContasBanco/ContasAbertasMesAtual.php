@@ -1,6 +1,4 @@
 <?php
-  require_once 'Filtro.php';
-
   class ContasAbertasMesAtual extends Filtro{
     public function filtra($contas){
       $contasSuspeitas = array();

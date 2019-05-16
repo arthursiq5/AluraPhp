@@ -1,7 +1,9 @@
 <?php
-  require_once 'BancoDados.php';
-  require_once 'RelatorioSimples.php';
-  require_once 'RelatorioComplexo.php';
+  function carregaClasse($nome){
+    require $nome . '.php';
+  }
+  spl_autoload_register('carregaClasse');
+  $reforma = new Orcamento(501);
 
   $b = new BancoDados('Santander', 'Teutonia', '99999-9999', 'std@email.com');
 

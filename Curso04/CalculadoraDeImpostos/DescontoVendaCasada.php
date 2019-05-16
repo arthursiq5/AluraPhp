@@ -1,6 +1,4 @@
 <?php
-  require_once "Desconto.php";
-
   class DescontoVendaCasada implements Desconto{
     public $nomeDoItem;
     private $proximoDesconto;

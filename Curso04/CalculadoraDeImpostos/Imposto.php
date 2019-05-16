@@ -1,6 +1,4 @@
 <?php
-  require_once "Orcamento.php";
-
   abstract class Imposto
   {
     protected $outroImposto;

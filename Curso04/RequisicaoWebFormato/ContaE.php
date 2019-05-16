@@ -1,6 +1,4 @@
 <?php
-  require_once 'Conta.php';
-
   class ContaE extends Conta{
     protected $agencia;
     protected $numero;

@@ -1,5 +1,4 @@
 <?php
-  require_once "Desconto.php";
   class Desconto5Itens implements Desconto{
     private $proximoDesconto;
     public function calcula(Orcamento $orcamento){

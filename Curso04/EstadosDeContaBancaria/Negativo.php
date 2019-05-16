@@ -1,7 +1,4 @@
 <?php
-  require_once 'EstadoConta.php';
-  require_once 'Conta.php';
-
   class Negativo implements EstadoConta{
     public function saque($valor, Conta $conta){
       throw new Exception('Nao foi possivel sacar, sua conta esta no negativo');

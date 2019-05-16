@@ -1,5 +1,4 @@
 <?php
-  require_once 'Filtro.php';
   class ContasMenosDe100Reais extends Filtro{
     public function filtra($contas){
       $contasSuspeitas = array();

@@ -1,6 +1,4 @@
 <?php
-  require_once 'Investimento.php';
-
   class Moderado implements Investimento{
     private $valorInvestido;
 

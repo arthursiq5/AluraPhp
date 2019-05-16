@@ -1,5 +1,4 @@
 <?php
-  require_once 'Orcamento.php';
   interface EstadoDoOrcamento{
     public function aplicaDesconto(Orcamento $orcamento);
 

@@ -1,9 +1,4 @@
 <?php
-  require_once 'EstadoDoOrcamento.php';
-  require_once 'Aprovado.php';
-  require_once 'EmAprovacao.php';
-  require_once 'Reprovado.php';
-  require_once 'Finalizado.php';
   class Aprovado implements EstadoDoOrcamento{
     private $descontoAplicado = false;
 

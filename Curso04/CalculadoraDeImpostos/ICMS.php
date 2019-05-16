@@ -1,8 +1,4 @@
 <?php
-  require_once 'Imposto.php';
-  require_once 'TemplateDeImpostoCondicional.php';
-
-
   class ICMS extends TemplateDeImpostoCondicional{
 
     public function deveUsarOMaximo(Orcamento $orcamento){

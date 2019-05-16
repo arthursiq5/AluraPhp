@@ -1,6 +1,4 @@
 <?php
-  require_once 'Formato.php';
-
   class SemFormato implements Formato{
     public function __construct($proximo = null){}
     public function setProximo(Formato $proximo){

@@ -1,5 +1,4 @@
 <?php
-  require_once 'Formato.php';
   class FormatoXML implements Formato{
     protected $proximoFormato;
 

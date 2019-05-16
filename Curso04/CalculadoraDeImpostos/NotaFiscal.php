@@ -18,12 +18,8 @@
       $this->dataEmissao = $dataEmissao;
     }
 
-    public function getEmpresa(){
-      return $this->empresa;
-    }
-
-    public function getCnpj(){
-      return $this->cnpj;
+    public function __get($attr){
+      return $this->$attr;
     }
   }
  ?>

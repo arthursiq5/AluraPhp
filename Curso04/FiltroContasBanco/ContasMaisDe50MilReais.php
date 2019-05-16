@@ -1,6 +1,4 @@
 <?php
-  require_once 'Filtro.php';
-
   class ContasMaisDe50MilReais extends Filtro{
     $contasSuspeitas = array();
     foreach ($contas as $conta) {

@@ -1,5 +1,9 @@
 <?php
-  require_once 'Conta.php';
+  function carregaClasse($nome){
+    require $nome . '.php';
+  }
+  spl_autoload_register('carregaClasse');
+  $reforma = new Orcamento(501);
 
   $joaquim = new Conta('Joaquim');
 
