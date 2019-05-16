@@ -1,4 +1,7 @@
 <?php
+  require_once 'Impressora.php';
+  require_once 'NotaFiscalDao.php';
+
   class NotaFiscalBuilder{
     // declaracao de variaveis do objeto
     private $empresa;
@@ -48,7 +51,12 @@
 
     public function build(){ // metodo gerador de notas fiscais
       if(is_null($this->dataEmissao)) $this->naData(); // se possuir uma data, use-a, senao, pegue a padrao do sistema
-      return new NotaFiscal($this->empresa, $this->cnpj, $this->itens, $this->valorBruto, $this->valorImpostos, $this->observacoes, ($this->dataEmissao)); // retorna uma nota fiscal completa
+      $notaFiscal = new NotaFiscal($this->empresa, $this->cnpj, $this->itens, $this->valorBruto, $this->valorImpostos, $this->observacoes, ($this->dataEmissao)); // retorna uma nota fiscal completa
+      $impressora = new Impressora();
+      $nfDao = new NotaFiscalDao();
+      $impressora->imprimir($notaFiscal);
+      $nfDao->salvaBanco($notaFiscal);
+      return $notaFiscal;
     }
   }
  ?>
