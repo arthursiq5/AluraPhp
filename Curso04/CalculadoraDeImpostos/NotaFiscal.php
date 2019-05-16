@@ -8,7 +8,7 @@
     private $observacoes;
     private $dataEmissao;
 
-    function __construct($nomeEmpresa, $cnpj, $itens, $valorBruto, $valorImpostos, $observacoes, $dataEmissao){
+    function __construct($nomeEmpresa, $cnpj, array $itens = array(), $valorBruto, $valorImpostos, $observacoes, $dataEmissao){
       $this->empresa = $nomeEmpresa;
       $this->cnpj = $cnpj;
       $this->itens = $itens;

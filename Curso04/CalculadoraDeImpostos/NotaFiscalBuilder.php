@@ -46,7 +46,7 @@
       }
     }
 
-    public function build(){
+    public function build(){ // metodo gerador de notas fiscais
       if(is_null($this->dataEmissao)) $this->naData(); // se possuir uma data, use-a, senao, pegue a padrao do sistema
       return new NotaFiscal($this->empresa, $this->cnpj, $this->itens, $this->valorBruto, $this->valorImpostos, $this->observacoes, ($this->dataEmissao)); // retorna uma nota fiscal completa
     }
