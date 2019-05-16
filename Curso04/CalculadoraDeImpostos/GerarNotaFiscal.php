@@ -18,7 +18,7 @@
   $gerador->comObservacoes('Tijolos amarelos');
   $gerador->naData();
 
-  $gerador->addAcao(new Impressora())->addAcao(new NotaFiscalDao());
+  $gerador->addAcao(new Impressora())->addAcao(new NotaFiscalDao())->addAcao(new EnviadorDeSms());
 
   $nota = $gerador->build();
 
