@@ -1,6 +1,7 @@
 <?php
-  class NotaFiscalDao{
-    public function salvaBanco(NotaFiscal $notaFiscal){
+  require_once 'AcoesAoGerarNota.php';
+  class NotaFiscalDao implements AcoesAoGerarNota{
+    public function executa(NotaFiscal $notaFiscal){
       echo '<br>Arquivo salvo no banco de dados</br>';
       return $this;
     }

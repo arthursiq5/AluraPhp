@@ -18,6 +18,8 @@
   $gerador->comObservacoes('Tijolos amarelos');
   $gerador->naData();
 
+  $gerador->addAcao(new Impressora())->addAcao(new NotaFiscalDao());
+
   $nota = $gerador->build();
 
   /*$nota = new NotaFiscal('Alura', '1234', $itens, 500, $imposto, 'tijolos', date('d/m/Y - h:i:s'));*/
