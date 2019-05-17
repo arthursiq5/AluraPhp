@@ -39,3 +39,6 @@ SELECT * FROM compras WHERE valor > 1000 AND data != '06-22-2010'; -- mostra tod
 SELECT valor*0.2 AS imposto FROM compras; -- seleciona o campo 'valor' e retorna cada item multiplicado por 0.2 (20% de cada valor) em uma coluna com o nome 'imposto'
 
 SELECT valor, valor*0.2 from compras; -- retorna uma coluna com cada valor, e outra com o imposto correspondente
+
+INSERT INTO compras (valor, data, observacao, recebido) VALUES (2000, '09-03-2011', 'CARNAVAL EM CANCUN', 1); -- data inserida esta errada, por causa do formato americano
+UPDATE compras SET data = '03-09-2011' WHERE id = 44; -- modificando a data do item cujo 'id' e igual a 44
