@@ -43,7 +43,7 @@ CREATE TABLE public.compras (
     data date,
     observacao character varying(255),
     recebido smallint,
-    form_pagto public.enum_pagamento
+    forma_pagamento public.enum_pagamento
 );
 
 
@@ -82,7 +82,7 @@ ALTER TABLE ONLY public.compras ALTER COLUMN id SET DEFAULT nextval('public.comp
 -- Data for Name: compras; Type: TABLE DATA; Schema: public; Owner: arthur
 --
 
-COPY public.compras (id, valor, data, observacao, recebido, form_pagto) FROM stdin;
+COPY public.compras (id, valor, data, observacao, recebido, forma_pagamento) FROM stdin;
 2	200	2008-02-19	MATERIAL ESCOLAR	1	\N
 3	3500	2008-05-21	TELEVISAO	0	\N
 4	1576.40	2008-04-30	MATERIAL DE CONSTRUCAO	1	\N

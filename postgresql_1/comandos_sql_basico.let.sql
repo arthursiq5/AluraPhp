@@ -89,3 +89,5 @@ ALTER TABLE compras ALTER COLUMN valor SET DEFAULT 0; -- definido um valor padra
 CREATE TYPE enum_pagamento AS enum('CARTAO', 'BOLETO', 'DINHEIRO'); -- criado tipo enumerador enum_pagamento
 
 ALTER TABLE compras ADD COLUMN form_pagto enum_pagamento; -- adicionada coluna do tipo 'enum_pagamento' a tabela 'compras'
+
+ALTER TABLE compras RENAME form_pagto TO forma_pagamento; -- tabela renomeada
