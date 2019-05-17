@@ -25,3 +25,9 @@ SELECT * FROM compras; -- mostra todos os dados da tabela 'compras'
 -- \i ~/Downloads/dump-postgres.sql -- importando o arquivo '~/Downloads/dump-postgres.sql' pra a base selecionada
 
 SELECT * FROM compras WHERE valor > 1000; -- mostra todos os campos de todos os itens da tabela compras quando o valor for maior que 1000
+
+SELECT * FROM compras WHERE valor <= 100; -- mostra todos os campos de todos os itens de valor menor ou igual a 100 reais
+
+SELECT * FROM compras WHERE data='06-22-2010'; -- mostra o item comprado dia 22 de junto de 2010 (formato de data americano)
+
+SELECT * FROM compras WHERE observacao='COMPRAS DE JANEIRO'; -- mostra o(s) item(ns) com a observacao igual a 'COMPRAS DE JANEIRO' (case sensitive)
