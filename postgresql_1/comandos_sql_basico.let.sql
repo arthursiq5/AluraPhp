@@ -78,4 +78,14 @@ DELETE FROM compras
 SELECT id, data, to_char(data, 'dd-mm-yyyy') AS data_formatada
   FROM compras; -- exemplo de formatacao da data em uma query
 
-  UPDATE compras SET data='2014-06-12' WHERE id=30; -- atualiza a data do item com id=30
+UPDATE compras SET data='2014-06-12' WHERE id=30; -- atualiza a data do item com id=30
+
+INSERT INTO compras (data, observacao, recebido) VALUES ('02-01-2013', 'brinde', 1); -- comando de insercao; o campo 'valor' foi preenchido com NULL
+
+ALTER TABLE compras ALTER COLUMN valor SET NOT NULL; -- alterando coluna valor para impedir valores nulos (NULL), mas apenas depois que deletar e/ou modificar TODOS os valores nulos da tabela
+
+ALTER TABLE compras ALTER COLUMN valor SET DEFAULT 0; -- definido um valor padrao(default)
+
+CREATE TYPE enum_pagamento AS enum('CARTAO', 'BOLETO', 'DINHEIRO'); -- criado tipo enumerador enum_pagamento
+
+ALTER TABLE compras ADD COLUMN form_pagto enum_pagamento; -- adicionada coluna do tipo 'enum_pagamento' a tabela 'compras'
