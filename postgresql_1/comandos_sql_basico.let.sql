@@ -34,11 +34,43 @@ SELECT * FROM compras WHERE observacao='COMPRAS DE JANEIRO'; -- mostra o(s) item
 
 SELECT * FROM compras WHERE observacao like '%COMPRAS%'; -- seleciona todos os itens que possuem em algum lugar da descricao a palavra compras (o simbolo de porcentagem pode significar tanto 'nada' quanto qualquer quantidade de caracteres de qualquer valor)
 
-SELECT * FROM compras WHERE valor > 1000 AND data != '06-22-2010'; -- mostra todas as compras com valor acima de 1000 reais e que nao foram comprados em 22 de junho de 2010
+SELECT *
+  FROM compras
+  WHERE valor > 1000
+    AND data != '06-22-2010'; -- mostra todas as compras com valor acima de 1000 reais e que nao foram comprados em 22 de junho de 2010
 
 SELECT valor*0.2 AS imposto FROM compras; -- seleciona o campo 'valor' e retorna cada item multiplicado por 0.2 (20% de cada valor) em uma coluna com o nome 'imposto'
 
 SELECT valor, valor*0.2 from compras; -- retorna uma coluna com cada valor, e outra com o imposto correspondente
 
-INSERT INTO compras (valor, data, observacao, recebido) VALUES (2000, '09-03-2011', 'CARNAVAL EM CANCUN', 1); -- data inserida esta errada, por causa do formato americano
+INSERT INTO compras (
+  valor,
+  data,
+  observacao,
+  recebido)
+VALUES (
+  2000,
+  '09-03-2011',
+  'CARNAVAL EM CANCUN',
+  1); -- data inserida esta errada, por causa do formato americano
+
 UPDATE compras SET data = '03-09-2011' WHERE id = 44; -- modificando a data do item cujo 'id' e igual a 44
+
+UPDATE compras SET observacao='GASTO PEQUENO' WHERE valor < 20; -- modifica a coluna 'observacao' para todos os itens cuja tabela 'valor' e menor que 20
+
+SELECT valor, data, observacao FROM compras WHERE data >= '01-01-2009' AND data <= '12-31-2009'; -- seleciona os campos 'valor', 'data' e 'observacao' entre todos os itens entre 1o de Janeiro de 2009 e 31 de Dezembro de 2009
+
+SELECT valor, data, observacao
+  FROM compras WHERE data BETWEEN '01-01-2009' AND '12-31-2009'; -- faz a mesma coisa que o comando anterior, so que de forma mais limpa e concisa
+
+SELECT valor, data, observacao
+  FROM compras
+  WHERE data BETWEEN '01-01-2009'
+    AND '12-31-2009'
+  AND NOT observacao='GASTO PEQUENO'; -- seleciona todos os itens comprados em 2009 e que nao tenham como observacao 'GASTO PEQUENO'
+
+DELETE FROM compras
+  WHERE data BETWEEN '01-01-2009'
+    AND '12-31-2009'; -- deleta todos os itens comprados em 2009
+
+/* https://pt.wikibooks.org/wiki/PostgreSQL_Pr%C3%A1tico/Administra%C3%A7%C3%A3o/Backup_e_Restore -> explicacao sobre backups*/
