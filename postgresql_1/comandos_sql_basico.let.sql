@@ -74,3 +74,8 @@ DELETE FROM compras
     AND '12-31-2009'; -- deleta todos os itens comprados em 2009
 
 /* https://pt.wikibooks.org/wiki/PostgreSQL_Pr%C3%A1tico/Administra%C3%A7%C3%A3o/Backup_e_Restore -> explicacao sobre backups*/
+
+SELECT id, data, to_char(data, 'dd-mm-yyyy') AS data_formatada
+  FROM compras; -- exemplo de formatacao da data em uma query
+
+  UPDATE compras SET data='2014-06-12' WHERE id=30; -- atualiza a data do item com id=30
