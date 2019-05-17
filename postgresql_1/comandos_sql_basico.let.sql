@@ -1,11 +1,12 @@
 -- pg_ctl -D /usr/local/var/postgres start -- iniciar o servidor
 -- psql -U arthur postgres -- iniciar interpretador de comandos sql
+-- \l; -- mostra todas as bases criadas
 
 CREATE DATABASE controle_compras; -- cria a base "controle_compras"
 CREATE DATABASE farmacia_online; -- cria a base "farmacia_online"
 
-\c controle_compras; -- conectar no banco controle_compras no mac
-\c farmacia_online;
+-- \c controle_compras; -- conectar no banco controle_compras no mac
+-- \c farmacia_online;
 
 CREATE TABLE compras ( -- tabela compras criada
   id SERIAL PRIMARY KEY, -- id como chave primaria; id auto-incrementavel (serial)
@@ -20,3 +21,7 @@ INSERT INTO compras VALUES (1, 100.0, '2009-12-14', 'presente de aniversario', 1
 INSERT INTO compras (valor, data, observacao, recebido) VALUES (100.0, '2009-12-14', 'presente de aniversario', 1); -- insere dados com o ID auto-incrementado
 
 SELECT * FROM compras; -- mostra todos os dados da tabela 'compras'
+
+-- \i ~/Downloads/dump-postgres.sql -- importando o arquivo '~/Downloads/dump-postgres.sql' pra a base selecionada
+
+SELECT * FROM compras WHERE valor > 1000; -- mostra todos os campos de todos os itens da tabela compras quando o valor for maior que 1000
