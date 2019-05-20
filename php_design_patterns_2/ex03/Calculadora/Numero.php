@@ -10,5 +10,9 @@
     public function avalia(){
       return $this->numero;
     }
+
+    public function getNumero(){
+      return $this->numero;
+    }
   }
  ?>
