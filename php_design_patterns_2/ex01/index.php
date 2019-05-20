@@ -1,12 +1,11 @@
 <?php
-  $host = "localhost";
-  $user = 'root';
-  $pass = '123';
-  $banco = 'alura';
+  require_once 'autoload.php';
+  use factory\ConnectionFactory;
 
-  $con = mysqli_connect($host, $user, $pass, $banco);
+  $factory = new ConnectionFactory();
 
-  $select = 'select * from cursos';
+  $con = $factory->getConnection();
+  
 
   var_dump($con);
  ?>
