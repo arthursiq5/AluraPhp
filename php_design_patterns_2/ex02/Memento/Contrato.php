@@ -13,14 +13,16 @@
 
     public function setTipo(TipoDeContrato $novoTipo){
       $this->tipo = $novoTipo;
+      return $this;
     }
 
-    public function avanca(){
+    public function avanca(){ // serve para avancar o estado do contrato
       $this->tipo->avanca($this);
+      return $this;
     }
 
     public function salvaEstado(){
-      return new Estado(new Contrato($this->nome, $this->data, $this->tipo));
+      return new Estado(new Contrato($this->nome, $this->data, $this->tipo)); // retorna o contrato atual (this) encapsulado
     }
   }
  ?>

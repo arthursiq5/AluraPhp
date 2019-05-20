@@ -2,7 +2,7 @@
   namespace Memento;
   class Estado{
     private $contrato;
-    private $horaGerada;
+    private $horaGerada; // salva a hora em que o estado foi gerado
 
     public function __construct(Contrato $contrato){
       $this->contrato = $contrato; // encapsula o contrato selecionado

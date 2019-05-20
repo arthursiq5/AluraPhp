@@ -12,7 +12,7 @@
     }
 
     public function addEstado(Estado $estado){
-      $this->estadosContrato[] = $estado;
+      $this->estadosContrato[] = $estado; // adiciona um novo estado ao vetor
       return $this;
     }
 
