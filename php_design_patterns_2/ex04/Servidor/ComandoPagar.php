@@ -10,6 +10,7 @@
     }
 
     public function executa(){
+      echo 'Pagando o pedido do cliente: ' . $this->pedido->getCliente() . '<br/>';
       $this->pedido->pagar();
     }
   }

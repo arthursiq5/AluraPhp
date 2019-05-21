@@ -19,5 +19,9 @@
    public function finalizar(){
      $this->status = new Finalizado();
    }
+
+   public function getCliente(){
+     return $this->cliente;
+   }
  }
  ?>

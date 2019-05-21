@@ -10,6 +10,7 @@
     }
 
     public function executa(){
+      echo 'Finalizando o pedido do cliente: ' . $this->pedido->getCliente() . '<br/>';
       $this->pedido->finalizar();
     }
   }
