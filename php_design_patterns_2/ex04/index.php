@@ -25,7 +25,7 @@
     add(new ComandoPagar($pedido2))->
     add(new ComandoPagar($pedido3))->
     add(new ComandoPagar($pedido4))->
-    add(new ComandoPagar($pedido3))->
+    add(new ComandoPagar($pedido5))->
     add(new ComandoFinalizar($pedido3))->
     processa();
 
