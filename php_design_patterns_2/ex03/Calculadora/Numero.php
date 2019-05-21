@@ -14,5 +14,10 @@
     public function getNumero(){
       return $this->numero;
     }
+
+    public function aceita(Impressora $impressora){ // gatilho para a impressora agir
+      $impressora->visitaNumero($this);
+      return $this;
+    }
   }
  ?>

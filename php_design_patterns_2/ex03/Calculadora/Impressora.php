@@ -3,39 +3,39 @@
 
   class Impressora{
     public function visitaNumero(Numero $numero){
-      echo $numero->getNumero();
+      echo $numero->getNumero(); // imprime o numero selecionado
       return $this;
     }
 
-    public function visitaSoma(Soma $soma){
+    public function visitaSoma(Soma $soma){ // imprime a soma dos objetos
       echo "(";
-      // esquerda
+      $soma->getEsquerda()->aceita($this);
       echo " + ";
-      // direita
+      $soma->getDireita()->aceita($this);
       echo ")";
     }
 
     public function visitaSubtracao(Subtracao $subtracao){
       echo "(";
-      // esquerda
+      $subtracao->getEsquerda()->aceita($this);
       echo " - ";
-      // direita
+      $subtracao->getDireita()->aceita($this);
       echo ")";
     }
 
     public function visitaMultiplicacao(Multiplicacao $multiplicacao){
       echo "(";
-      // esquerda
+      $multiplicacao->getEsquerda()->aceita($this);
       echo " * ";
-      // direita
+      $multiplicacao->getDireita()->aceita($this);
       echo ")";
     }
 
     public function visitaDivisao(Divisao $divisao){
       echo "(";
-      // esquerda
+      $divisao->getEsquerda()->aceita($this);
       echo " / ";
-      // direita
+      $divisao->getDireita()->aceita($this);
       echo ")";
     }
   }
