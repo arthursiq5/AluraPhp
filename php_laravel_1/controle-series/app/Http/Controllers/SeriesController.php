@@ -1,7 +1,7 @@
 <?php
   namespace app\Http\Controllers;
 
-  class SeriesController{
+  class SeriesController extends Controller{
     public function listarSeries(){
       $series = [
         'Grey\s Anatomy',
